@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spotify Clone</title>
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding-bottom: 100px; /* Player bar ke liye jagah */
+        }
+
+        /* Sidebar & Main Layout */
+        .main-container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        h1 { font-size: 32px; margin-bottom: 20px; }
+
+        /* Album Grid */
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .album-card {
+            background: #181818;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .album-card:hover {
+            background: #282828;
+        }
+
+        .album-card img {
+            width: 100%;
+            aspect-ratio: 1/1; /* Perfect Square */
+            border-radius: 6px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+
+        .album-title { font-weight: bold; font-size: 14px; margin-bottom: 5px; }
+        .album-artist { color: #b3b3b3; font-size: 12px; }
+
+        /* Bottom Music Player Bar */
+        .player-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #181818;
+            border-top: 1px solid #282828;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .current-song { display: flex; align-items: center; width: 30%; }
+        .current-song img { width: 50px; height: 50px; border-radius: 4px; margin-right: 15px; }
+
+        .controls { color: #1DB954; font-size: 24px; cursor: pointer; } /* Spotify Green */
+        
+        .progress-bar {
+            width: 40%;
+            height: 4px;
+            background: #4f4f4f;
+            border-radius: 2px;
+            position: relative;
+        }
+        .progress-fill { width: 45%; height: 100%; background: #1DB954; border-radius: 2px; }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="content">
+            <h1>Good Evening</h1>
+            
+            <div class="album-grid">
+                <div class="album-card">
+                    <img src="https://via.placeholder.com/150?text=Motu+Patlu+Hits" alt="Album">
+                    <div class="album-title">Furfurinagar Mashup</div>
+                    <div class="album-artist">Dr. Jhatka Remix</div>
+                </div>
+
+                <div class="album-card">
+                    <img src="https://via.placeholder.com/150?text=Trending+2026" alt="Album">
+                    <div class="album-title">Top Hits 2026</div>
+                    <div class="album-artist">Global Artists</div>
+                </div>
+
+                <div class="album-card">
+                    <img src="https://via.placeholder.com/150?text=Lo-Fi+Beats" alt="Album">
+                    <div class="album-title">Late Night Lo-Fi</div>
+                    <div class="album-artist">Chilled Cow</div>
+                </div>
+
+                <div class="album-card">
+                    <img src="https://via.placeholder.com/150?text=Bollywood" alt="Album">
+                    <div class="album-title">Bollywood Retro</div>
+                    <div class="album-artist">Kishore Kumar</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-bar">
+        <div class="current-song">
+            <img src="https://via.placeholder.com/50?text=MP" alt="Song">
+            <div>
+                <div class="album-title">Samosa Party Song</div>
+                <div class="album-artist">Motu & Patlu</div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="controls">
+            ⏮ &nbsp; ▶ &nbsp; ⏭
+        </div>
+    </div>
+
+</body>
+</html>
